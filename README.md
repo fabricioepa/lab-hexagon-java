@@ -37,7 +37,7 @@ I should remeber you these patterns are not exclusively related to the Java tech
 ### 4. ticketapp-adapter-rest  (/integration/rest-adapter/pom.xml)
  The RESTful API **ADAPTER** for the application service **PORT** (core-api)
  
-The adapters projects (/integration/*) are dependent on the core-api, they do not know at compilation time the core-application, the concrete core-application will be provided just at runtime by the **Dependency Injection Container**.
+The adapters projects (/integration/\*) are dependent on the core-api, they do not know at compilation time the core-application, the concrete core-application will be provided just at runtime by the **Dependency Injection Container**.
 
 # My professional experience using this technique
  
