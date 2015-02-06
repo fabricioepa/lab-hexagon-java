@@ -39,7 +39,7 @@ The adapters projects (/integration/*) are dependent on the core-api, they do no
 
 # My professional experience using this technique
  
- It was very simple to create a decoupled REST adapter from the core application, it also should
+ It was very simple to create a decoupled REST adapter from the core application, it should
  be simple to create another kind of adapter too.
  However, if the application domain is quite BIG or there are many ports and adapters, you will have some overhead to maintain different domains translated from the original application core domain.
 The **PORT** interface should also have a stable API definition, you should design it to support evolution without easily break compatibility with the adapters implementations for that **PORT**.  
