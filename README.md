@@ -62,7 +62,7 @@ public interface TicketService {
 }
 ```
 
- This is one of the reasons the pattern as often been applied to microservices architecture, because 
+ This is one of the reasons the pattern has often been applied to microservices architecture, because 
  it works nice for multiple system integrations and also for small/medium sized application domains.
  
  If the application domain starts to grow, may be it is the time to think about design a new hexagon to it.
