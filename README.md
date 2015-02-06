@@ -36,12 +36,32 @@ You can find o better information about the design of this solution in the prese
  The RESTful API **ADAPTER** for the application service **PORT** (core-api)
 
 # My professional experience using this technique
+ 
  It was very simple to create a decoupled REST adapter from the core application, it also should
  be simple to create another kind of adapter too.
  However, if the application domain is quite BIG or there are many ports and adapters, you will have some overhead to maintain different domains translated from the original application core domain.
-  
+ The **PORT** interface should also have a stable API definition, you should design it to support evolution without easily break compatibility with the adapters implementations for that **PORT**.  For this project I designed domain events to encapsulate all input and output data for the service, enabling the application to be evoluted without break the adapters
+ 
+ `core/api/src/main/java/com/ticketapp/core/api/TicketService.java`
+```java
+/**
+ * Ticket Service - Use Case API
+ */
+public interface TicketService {
+
+	TicketsReadEvent list(ReadTicketsEvent event);
+
+	TicketCreatedEvent create(CreateTicketEvent ticket);
+
+	TicketUpdatedEvent update(UpdateTicketEvent ticket);
+
+	TicketDeletedEvent delete(DeleteTicketEvent ticket);
+}
+```
+
  This is one of the reasons the pattern as often been applied to microservices architecture, because 
  it works nice for system integrations and also for small/medium sized application domains.
-
-
-Feel free to bring up your ideas  ;)
+ 
+ If the domain starts to grow, may be it is the time to think about design a new hexagon to it
+ 
+ Feel free to bring up your ideas  ;)
