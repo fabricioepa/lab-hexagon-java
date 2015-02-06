@@ -18,6 +18,8 @@ The Hexagonal pattern is described by Alistair Cockburn in his blog:
 
 You can find o better information about the design of this solution in the presentation [Hexagonal Architecture ](http://fabricioepa.wordpress.com/2015/02/04/hexagonal-architecture)
 
+I should remeber you these patterns are not exclusively related to the Java technologies and frameworks.
+
 # The project structure
 
 ### 1. ticketapp (/pom.xml)
