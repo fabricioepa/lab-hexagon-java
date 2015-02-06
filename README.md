@@ -21,19 +21,19 @@ You can find o better information about the design of this solution in the prese
 # The project structure
 
 ### 1. ticketapp (/pom.xml)
-> Main parent maven project aggregates all project modules
+ Main parent maven project aggregates all project modules
 
 ### 2. ticketapp-core-api (/core/api/pom.xml)
-> This module plays the role **PORT** for the hexagon architecture. 
+ This module plays the role **PORT** for the hexagon architecture. 
  
-> Service port -> All service interfaces and API objects to acccess the **CORE** application. 
+ Service port -> All service interfaces and API objects to acccess the **CORE** application. 
 
 ### 3. ticketapp-core-application (/core/application/pom.xml)
-> This modules plays the **CORE** role in the hexagonal pattern:
-> Implementation of the application services, event handlers, domain model entities and repositories.
+ This modules plays the **CORE** role in the hexagonal pattern:
+ Implementation of the application services, event handlers, domain model entities and repositories.
 
 ### 4. ticketapp-adapter-rest  (/integration/rest-adapter/pom.xml)
-> The RESTful API **ADAPTER** for the application service **PORT** (core-api)
+ The RESTful API **ADAPTER** for the application service **PORT** (core-api)
 
 
 # My professional experience using this techniques
@@ -42,10 +42,8 @@ You can find o better information about the design of this solution in the prese
   However, if the application domain is quite BIG, the number of ports and adapters may be increase
   and introduce some overhead to maintain different domains translated from the original application core domain.
   
-   This is one of the reasons the pattern as often been applied to microservices architecture, because 
-   it works nice for system integrations and for small-medium application domains.
-   
-   
+ This is one of the reasons the pattern as often been applied to microservices architecture, because 
+ it works nice for system integrations and for small-medium application domains.
 
 
 Feel free to bring up your ideas  ;)
