@@ -34,13 +34,16 @@ You can find o better information about the design of this solution in the prese
 
 ### 4. ticketapp-adapter-rest  (/integration/rest-adapter/pom.xml)
  The RESTful API **ADAPTER** for the application service **PORT** (core-api)
+ 
+The adapters projects (/integration/*) are dependent on the core-api, they do not know at compilation time the core-application, the concrete core-application will be provided just at runtime by the **Dependency Injection Container**.
 
 # My professional experience using this technique
  
  It was very simple to create a decoupled REST adapter from the core application, it also should
  be simple to create another kind of adapter too.
  However, if the application domain is quite BIG or there are many ports and adapters, you will have some overhead to maintain different domains translated from the original application core domain.
- The **PORT** interface should also have a stable API definition, you should design it to support evolution without easily break compatibility with the adapters implementations for that **PORT**.  For this project I designed domain events to encapsulate all input and output data for the service, enabling the application to be evoluted without break the adapters
+The **PORT** interface should also have a stable API definition, you should design it to support evolution without easily break compatibility with the adapters implementations for that **PORT**.  
+As inital strategy to achieve that design, the project has domain events to encapsulate all input and output data for the service, enabling the application to evolute without directly break the adapter code of the API.
  
  `core/api/src/main/java/com/ticketapp/core/api/TicketService.java`
 ```java
@@ -60,8 +63,8 @@ public interface TicketService {
 ```
 
  This is one of the reasons the pattern as often been applied to microservices architecture, because 
- it works nice for system integrations and also for small/medium sized application domains.
+ it works nice for multiple system integrations and also for small/medium sized application domains.
  
- If the domain starts to grow, may be it is the time to think about design a new hexagon to it
+ If the application domain starts to grow, may be it is the time to think about design a new hexagon to it.
  
  Feel free to bring up your ideas  ;)
