@@ -26,7 +26,7 @@ You can find o better information about the design of this solution in the prese
 ### 2. ticketapp-core-api (/core/api/pom.xml)
  This module plays the role **PORT** for the hexagon architecture. 
  
- Service port -> All service interfaces and API objects to acccess the **CORE** application. 
+ Service port definition -> All service interfaces and API objects to acccess the **CORE** application. 
 
 ### 3. ticketapp-core-application (/core/application/pom.xml)
  This modules plays the **CORE** role in the hexagonal pattern:
@@ -35,15 +35,13 @@ You can find o better information about the design of this solution in the prese
 ### 4. ticketapp-adapter-rest  (/integration/rest-adapter/pom.xml)
  The RESTful API **ADAPTER** for the application service **PORT** (core-api)
 
-
-# My professional experience using this techniques
+# My professional experience using this technique
  It was very simple to create a decoupled REST adapter from the core application, it also should
- be simple to create another new adapter too.
-  However, if the application domain is quite BIG, the number of ports and adapters may be increase
-  and introduce some overhead to maintain different domains translated from the original application core domain.
+ be simple to create another kind of adapter too.
+ However, if the application domain is quite BIG or there are many ports and adapters, you will have some overhead to maintain different domains translated from the original application core domain.
   
  This is one of the reasons the pattern as often been applied to microservices architecture, because 
- it works nice for system integrations and for small-medium application domains.
+ it works nice for system integrations and also for small/medium sized application domains.
 
 
 Feel free to bring up your ideas  ;)
