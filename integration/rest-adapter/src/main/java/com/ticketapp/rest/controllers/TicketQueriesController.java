@@ -34,23 +34,5 @@ public class TicketQueriesController {
 		}
 		return tickets;
 	}
-	//
-	// @RequestMapping(method = RequestMethod.GET, value = "{code}")
-	// @ResponseBody
-	// public Ticket getById(@PathVariable Integer code) {
-	// TicketDetails transfer = ticketService.getByCode(code);
-	// return Ticket.fromTicketDetails(transfer);
-	// }
-	//
-	// @RequestMapping(method = RequestMethod.GET, value =
-	// "priority/{priority}")
-	// @ResponseBody
-	// public Collection<Ticket> get(@PathVariable int priority) {
-	// List<Ticket> tickets = new ArrayList<Ticket>();
-	// for (TicketDetails ticket : ticketService.getAllByPriority(priority)) {
-	// tickets.add(Ticket.fromTicketDetails(ticket));
-	// }
-	// return tickets;
-	// }
 
 }
