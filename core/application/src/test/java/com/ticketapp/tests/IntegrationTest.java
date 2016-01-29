@@ -10,6 +10,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ticketapp.core.api.TicketService;
+import com.ticketapp.core.api.events.ResponseCode;
 import com.ticketapp.core.api.events.ticket.CreateTicketEvent;
 import com.ticketapp.core.api.events.ticket.TicketCreatedEvent;
 import com.ticketapp.core.api.objects.TicketDetails;
@@ -33,6 +34,8 @@ public class IntegrationTest {
 
 		TicketCreatedEvent evtOutput = ticketService.create(event);
 
+		assertEquals(ResponseCode.OK, evtOutput.getCode());
+		
 		TicketDetails output = evtOutput.getObject();
 
 		assertEquals(5, output.getPriority());
