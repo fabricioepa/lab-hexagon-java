@@ -66,7 +66,7 @@ public class TicketServiceHandler implements TicketService {
 		// Use case rules go here
 		// Use service composition to call other services
 		entity.setCreation(new Date());
-		Account account = accountRepository.findOne(event.getObject().getAccount());
+		Account account = accountRepository.getReferenceById(event.getObject().getAccount());
 		entity.setAccount(account);
 		entity = ticketRepository.save(entity);
 
@@ -83,7 +83,7 @@ public class TicketServiceHandler implements TicketService {
 	@Override
 	public TicketDeletedEvent delete(DeleteTicketEvent ticket) {
 		try {
-			ticketRepository.delete(ticket.getCode());
+			ticketRepository.deleteById(ticket.getCode());
 		} catch (EmptyResultDataAccessException e) {
 			return new TicketDeletedEvent().notFound();
 		}
