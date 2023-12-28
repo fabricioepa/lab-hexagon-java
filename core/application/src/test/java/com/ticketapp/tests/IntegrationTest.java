@@ -1,13 +1,12 @@
 package com.ticketapp.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.ticketapp.core.api.TicketService;
 import com.ticketapp.core.api.events.ResponseCode;
@@ -16,8 +15,7 @@ import com.ticketapp.core.api.events.ticket.TicketCreatedEvent;
 import com.ticketapp.core.api.objects.TicketDetails;
 import com.ticketapp.core.application.TicketappApplication;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = TicketappApplication.class)
+@SpringBootTest(classes = TicketappApplication.class)
 public class IntegrationTest {
 
 	@Autowired
